@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= isim %> - Papara Cashout</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
         body {
-          font-family: 'Poppins', sans-serif;;
+          font-family: 'Poppins', sans-serif;
           color: #a3a3a3;
+
         }
         
         .split {
           height: 100%;
           width: 50%;
           position: fixed;
-          z-index: 1;
           top: 0;
           overflow-x: hidden;
           padding-top: 20px;
@@ -34,16 +34,42 @@
         
         .centered {
           position: absolute;
-          left: 10%;
+          left: 32%;
+          top: 5%;
         }
-        </style>
+
+        .centered img {
+          width: 20px;
+          border-radius: 25%;
+        }
+
+        .topname{
+          font-size: 15px;
+        }
+
+        .money{
+          color: white;
+          font-weight: 700;
+          font-size: 30px;
+          margin-top: -15px;
+        }
+
+        .descriptiontop{
+          margin-top: -35px;
+          font-weight: 600;
+          max-width: 27em;
+          font-size: 15px;
+        }
+</style>
 </head>
 <body>
-
     <div class="split left">
         <div class="centered">
-          <h2><%= isim %></h2>
-          <p>Some text.</p>
+          <img src="https://i.imgur.com/<%= pfp %>" alt="Profile Photo">
+          <h2 class="topname"><%= isim %></h2>
+          <p class="money">$10,00</p>
+          <p class="descriptiontop"><%= desc %></p>
+          <img src="https://i.imgur.com/<%= img %>" alt="">
         </div>
       </div>
       
