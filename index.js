@@ -15,4 +15,3 @@ app.get('/:numara/:isim/:desc/:pfp/:img/', function (req, res) {
 
 app.listen(80)
 console.log(`Your app is listening on http://localhost`)
-console.log('Testing link | http://localhost/1111111111/ReXulEc/Test/imgurimg/imgurimg')
