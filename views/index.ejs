@@ -141,16 +141,16 @@
           border: none;
           outline: none;
           background-color: purple;
-          padding: 1rem 2rem;
+          padding: 1rem 2.5rem;
           position: relative;
           border-radius: 8px;
           letter-spacing: 0.7px;
-          background-color: #5086bd;
+          background-color: #7289da;
           color: #fff;
           font-size: 21px;
           font-family: "Lato", sans-serif;
           cursor: pointer;
-          box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+          box-shadow: rgba(0, 4, 27, 0.445) 0px 0px 8px 0px;
         }
 
         a{
@@ -160,7 +160,28 @@
         .buttons{
           margin-top: 25px;
         }
+
+        .or{
+          color: #303030;
+          font-size: 23px;
+          font-weight: 500;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        .moneyy {
+          transition: transform .2s; /* Animation */
+          margin: 0 auto;
+        }
+
+        .moneyy:hover{
+          transform: scale(1.1);
+        }
+
 </style>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 </head>
 <body>
     <div class="split left">
@@ -179,16 +200,18 @@
         <h3 class="ims">İstediğiniz miktarı seçin veya özel bir miktar</br>belirleyin.</h3>
           <div class="buttons">
             <a href="https://www.papara.com/personal/qr?amount=15&description=<%= isim %>&accountNumber=<%= numara %>&currency=0">
-              <button>$15</button>
+              <button class="moneyy">$15</button>
             </a>
             <a href="https://www.papara.com/personal/qr?amount=50&description=<%= isim %>&accountNumber=<%= numara %>&currency=0">
-              <button>$50</button>
+              <button class="moneyy">$50</button>
             </a>
             <a href="https://www.papara.com/personal/qr?amount=100&description=<%= isim %>&accountNumber=<%= numara %>&currency=0">
-              <button>$100</button>
+              <button class="moneyy">$100</button>
             </a>
           </div>
-
+          <p class="or">Veya,</p>
+          <div class="orlist">
+          </div>
       </div>
       <hr>
 
