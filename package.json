@@ -1,7 +1,17 @@
 {
+  "name": "repeatpay",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ReXulEc",
+  "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "nodejs-base64": "^2.0.0"
+    "nodejs-base64": "^2.0.0",
+    "ping": "^0.4.1"
   }
 }
