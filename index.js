@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const { base64encode, base64decode } = require('nodejs-base64');
 var ping = require('ping');
+const port = 3000
 
 app.set('view engine', 'ejs');
 
@@ -15,21 +16,12 @@ app.get('/:numara/:isim/:desc/:pfp/:img/', function (req, res) {
       res.json({ "status":404, "desc":"gecersiz-num" })
   } else {
       console.log(`${numara}/${isim}/${desc}/${pfp}/${img}`)
-      res.render('index', {numara: numara, isim: isim, desc: desc, pfp: pfp, img: img});
+      res.render('profile', {numara: numara, isim: isim, desc: desc, pfp: pfp, img: img});
   }
 })
 
 app.get('/earlyuser/', function (req, res) {
-  var hosts = ['papara.com', 'imgur.com'];
-  hosts.forEach(function(host){
-      ping.sys.probe(host, function(isAlive){
-          if(isAlive){
-            res.json({ "status":"✔", "message":"all systems are working", "quick-docs":"sayfa açmak için şu sayfaya gidin -> /earlyuser/<papara numarası>/<ismin>/<açıklama>/<profil fotoğrafı>/<alttaki fotoğraf>", "not":"profil fotoğrafı ve alttaki fotoğraf için imgur kullanın ama i.imgur.com/<fotoğraf adres>.png yerine lütfen <fotoğraf adresi>.png kullanın!" })
-          } else {
-            res.json({ "status":"🧨", "message":"sistemler çalışmıyor, lütfen başka zaman deneyin" })
-          }
-      });
-  });
+  res.json({ "status":"✔", "quick-docs":"/quick-docs" })
 })
 
 app.get('/earlyuser/:numaraa/:isimm/:descc/:pfpp/:imgg/', function (req, res){
@@ -44,9 +36,10 @@ app.get('/earlyuser/:numaraa/:isimm/:descc/:pfpp/:imgg/', function (req, res){
   res.json({ "status":"success", "url":`${numara}/${isim}/${desc}/${pfp}/${img}/`})
 })
 
-process.on('uncaughtException', function (exception) {
-  console.log('- Error! Bilinmeyen bir hata var, hatalar atlandı. -')
- });
+app.get('/', function (req, res){
+  res.render("index");
+})
 
-app.listen(80)
-console.log(`Your app is listening on http://localhost`)
+app.listen(process.env.PORT || port)
+console.log(`App listening at http://localhost:${port}`)
+// rexulec <33
