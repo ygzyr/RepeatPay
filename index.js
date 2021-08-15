@@ -37,7 +37,7 @@ app.get('/earlyuser/:numaraa/:isimm/:descc/:pfpp/:imgg/', function (req, res){
 })
 
 app.get('/', function (req, res){
-  res.render("index");
+  res.render('index')
 })
 
 app.listen(process.env.PORT || port)
