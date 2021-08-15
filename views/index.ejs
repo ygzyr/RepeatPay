@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RepeatPay</title>
+
+  <!-- animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- css -->
   <style>
     @font-face {
       font-family: 'Segoe UI';
@@ -49,18 +54,21 @@
     }
 
     body {
-      background-color: rgb(255, 255, 255);
-      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://i.imgur.com/2wj3UKE.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
     }
 
     .topnav {
       overflow: hidden;
-    } 
+    }
 
     /* Style the links inside the navigation bar */
     .topnav a {
       float: right;
-      color: #333;
+      color: rgb(255, 255, 255);
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
@@ -69,50 +77,78 @@
       border-width: 1px;
       border-radius: 25px;
       font-weight: 450;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .topnav p {
       float: left;
-      color: #333;
+      color: rgb(255, 255, 255);
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
       font-size: 17px;
       margin-top: 0px;
-      font-weight: 700;
+      font-weight: 600;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .topnav a:hover {
-      background-color: rgb(139, 139, 139);
+      background-color: rgb(49, 61, 71);
       transition: 0.5s ease;
     }
 
-    hr{
+    hr {
       margin-top: -5px;
     }
 
-    .maintext{
-      position: fixed;
-      left: 5%;
-      font-size: 25px;
-      font-family: 'Segoe UI Light', sans-serif;
-      text-align: left;
+    .maintext {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 300;
+      color: white;
+    }
+
+    .bottommaintext {
+      font-size: 15px;
+      margin-top: -25px;
+      font-weight: 500;
+      color: rgb(116, 116, 116);
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      .bottommaintext {
+        font-size: 18px;
+        margin-top: -25px;
+        font-weight: 500;
+        color: rgb(116, 116, 116);
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="topnav">
-    <a href="#news">Quick Docs</a>
-    <a href="#home">Home</a>
-    <p href="#test">RepeatPay</p>
+  <div class="topnav"> <!-- Navbar -->
+    <a href="/quick-docs">Quick Docs</a>
+    <a href="/">Home</a>
+    <p href="#">RepeatPay.</p>
   </div>
-  <hr>
+
+  <hr> <!-- Ara çizgi -->
 
   <div class="maintext">
-    <h1>Websiteleriniz için yeni bir ödeme sistemi..</br>
-        RepeatPay</h1>
+    <h1 class="animate__animated animate__fadeInDown">Websiteleriniz için yeni bir ödeme sistemi,
+      RepeatPay.</h1>
+    <h1 class="animate__animated animate__fadeInDown bottommaintext">Detaylı bilgi için Quick Docs sayfasına gidin.</h1>
   </div>
 </body>
-
 </html>
+
+<!-- made by rexulec with <3 -->
