@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const { base64encode, base64decode } = require('nodejs-base64');
-var ping = require('ping');
+const config = require('./config.json')
 const port = 3000
 
 app.set('view engine', 'ejs');
@@ -21,7 +21,7 @@ app.get('/:numara/:isim/:desc/:pfp/:img/', function (req, res) {
 })
 
 app.get('/earlyuser/', function (req, res) {
-  res.json({ "status":"✔", "quick-docs":"/quick-docs" })
+  res.json({ "status":"✔", "quick-docs":"docs.repeatpay.ga" })
 })
 
 app.get('/earlyuser/:numaraa/:isimm/:descc/:pfpp/:imgg/', function (req, res){
@@ -42,6 +42,17 @@ app.get('/', function (req, res){
 
 app.get('/res/:number/:miktar/:name/', function (req, res){
   res.render('redirecting', {numara: req.params.number, miktar: req.params.miktar, isim: req.params.name})
+})
+
+// Custom Profiles
+app.get('/:usersearch', function (req, res){
+  if(req.params.usersearch == 'rexulec'){
+    res.render('profile', {numara: config.rexulec.id, isim: config.rexulec.name, desc: config.rexulec.desc, pfp: config.rexulec.topphoto, img: config.rexulec.bottomphoto});
+  } else if(req.params.usersearch == 'ygz'){
+    res.render('profile', {numara: config.ygz.id, isim: config.ygz.name, desc: config.ygz.desc, pfp: config.ygz.topphoto, img: config.ygz.bottomphoto});
+  } else {
+    res.json({ "message":"hatali kullanici adi", "ozel url icin":"docs.repeatpay.ga/#bitiris" })
+  }
 })
 
 app.listen(process.env.PORT || port)
