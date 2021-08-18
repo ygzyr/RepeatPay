@@ -40,6 +40,10 @@ app.get('/', function (req, res){
   res.render('index')
 })
 
+app.get('/res/:number/:miktar/:name/', function (req, res){
+  res.render('redirecting', {numara: req.params.number, miktar: req.params.miktar, isim: req.params.name})
+})
+
 app.listen(process.env.PORT || port)
 console.log(`App listening at http://localhost:${port}`)
 // rexulec <33
