@@ -3,8 +3,18 @@
 
 <head>
     <title>Redirecting..</title>
+    <meta http-equiv="refresh"
+        content="2; url = https://www.papara.com/personal/qr?amount=<%= miktar %>&description=<%= isim %>&accountNumber=<%= numara %>&currency=0" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+        body {
+            background-image: url('https://i.imgur.com/2wj3UKE.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
 
         div {
             position: fixed;
@@ -21,7 +31,7 @@
         .dot {
             height: 250px;
             width: 250px;
-            background: linear-gradient(90deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(236, 67%, 55%, 1) 100%);
+            background: linear-gradient(#e979e8, #311c5e);
             border-radius: 50%;
             display: inline-block;
             position: absolute;
@@ -35,20 +45,55 @@
         @keyframes animation1 {
             0% {
                 position: absolute;
-                -ms-transform: rotate(320deg);
-                /* IE 9 */
-                transform: rotate(320deg);
                 filter: blur(50px);
                 opacity: 0;
             }
 
             100% {
                 position: absolute;
-                -ms-transform: rotate(0deg);
-                /* IE 9 */
-                transform: rotate(0deg);
                 filter: blur(0);
                 opacity: 1;
+            }
+        }
+
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            .dot {
+                height: 500px;
+                width: 500px;
+                background: linear-gradient(#e979e8, #311c5e);
+                border-radius: 50%;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: animation1 1s;
+                z-index: -1;
+            }
+
+            .res {
+                font-size: 50px;
+            }
+        }
+
+        /* iPads (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+            .dot {
+                height: 300px;
+                width: 300px;
+                background: linear-gradient(#e979e8, #311c5e);
+                border-radius: 50%;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: animation1 1s;
+                z-index: -1;
+            }
+
+            .res {
+                font-size: 35px;
             }
         }
     </style>
