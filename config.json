@@ -4,13 +4,44 @@
         "name":"ReXulEc",
         "desc":"Hi 👋 My name is Mert. I am a young developer from Turkey. I am student, developer and designer. I try to code python apps in my free time. I am also a web developer and UI UX designer. I have been using Adobe Photoshop, After Effect and Illustrator for 3 years.I can code Python, Javascript, Html, Css well.",
         "topphoto":"mtiNUUr.jpg",
-        "bottomphoto":"0Yg3IWk.png"
+        "bottomphoto":"0Yg3IWk.png",
+        "premium":true,
+        "paparadesc":"Destekleriniz için teşekkürler!"
     },
     "ygz": {
         "id":1667279144,
         "name":"Ygz",
         "desc":"Hallo, ich bin Yagiz! Ich bin Student und Entwickler.",
         "topphoto":"LypmChr.jpg",
-        "bottomphoto":"0Yg3IWk.png"
+        "bottomphoto":"0Yg3IWk.png",
+        "premium":true,
+        "paparadesc":false
+    },
+    "klontar": {
+        "id":1658615931,
+        "name":"Klontar",
+        "desc":"Owner of TDS 🏆.",
+        "topphoto":"hqf3V8F.png",
+        "bottomphoto":"0Yg3IWk.png",
+        "premium":true,
+        "paparadesc":false
+    },
+    "lyessa": {
+        "id":1658615931,
+        "name":"Lyessa",
+        "desc":"Node.js / Frontend Developer.",
+        "topphoto":"BJbyFBu.png",
+        "bottomphoto":"0Yg3IWk.png",
+        "premium":true,
+        "paparadesc":false
+    },
+    "reponseapp": {
+        "id":1815049159,
+        "name":"Reponse App",
+        "desc":"Hi 👋 We are Reponse App Team! You Can Donate us For Support (You Will Be Rewarded). If you have questions, please contact us! [reponseapp@rexulec.com or discord.gg/sveaSjXJBv]",
+        "topphoto":"NukT1zA.png",
+        "bottomphoto":"NukT1zA.png",
+        "premium":true,
+        "paparadesc":"Eğer bağış yaptıysanız lütfen rexulec e bilgi veriniz."
     }
 }
