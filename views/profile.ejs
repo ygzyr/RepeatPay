@@ -1,228 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= isim %> - RepeatPay Cashout</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
-        
-        @font-face {
-          font-family: 'Segoe UI';
-          src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot');
-          src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot?#iefix') format('embedded-opentype'),
-          url('/surface/Assets/css/fonts/all/normal/segoeui.woff') format('woff'),
-          url('/surface/Assets/css/fonts/all/normal/segoeui.svg#SegoeUI') format('svg');
-          font-weight: normal;
-          font-style: normal;
-        }
+  <meta charset="UTF-8" prefix="og: https://ogp.me/ns#">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://i.imgur.com/<%= pfp %>">
+  <title>
+    <%= isim %> - RepeatPay Cashout
+  </title>
+  <meta property="og:title" content="<%= isim %> - RepeatPay Cashout" />
+  <meta property="og:image" content="https://i.imgur.com/<%= pfp %>" />
+  <meta property="og:description" content="<%= desc %>" />
 
-        @font-face {
-          font-family: 'Segoe UI Semibold';
-          src: url('/surface/Assets/css/fonts/all/semibold/seguisb.eot');
-          src: url('/surface/Assets/css/fonts/all/semibold/seguisb.eot?#iefix') format('embedded-opentype'),
-          url('/surface/Assets/css/fonts/all/semibold/seguisb.woff') format('woff'),
-          url('/surface/Assets/css/fonts/all/semibold/seguisb.svg#SegoeUISemibold') format('svg');
-          font-weight: normal;
-          font-style: normal;
-        }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
 
-        @font-face {
-          font-family: 'Segoe UI Bold';
-          src: url('/surface/Assets/css/fonts/all/bold/segoeuib.eot');
-          src: url('/surface/Assets/css/fonts/all/bold/segoeuib.eot?#iefix') format('eot'), /* Wrong format will tell IE9+ to ignore and use WOFF instead. MSHAR-2822 */
-          url('/surface/Assets/css/fonts/all/bold/segoeuib.woff') format('woff'),
-          url('/surface/Assets/css/fonts/all/bold/segoeuib.svg#SegoeUIBold') format('svg');
-          font-weight: normal;
-          font-style: normal;
-        }
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot');
+      src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot?#iefix') format('embedded-opentype'),
+        url('/surface/Assets/css/fonts/all/normal/segoeui.woff') format('woff'),
+        url('/surface/Assets/css/fonts/all/normal/segoeui.svg#SegoeUI') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-        @font-face {
-          font-family: 'Segoe UI Light';
-          src: url('/surface/Assets/css/fonts/all/light/segoeuil.eot');
-          src: url('/surface/Assets/css/fonts/all/light/segoeuil.eot?#iefix') format('embedded-opentype'),
-          url('/surface/Assets/css/fonts/all/light/segoeuil.woff') format('woff'),
-          url('/surface/Assets/css/fonts/all/light/segoeuil.svg#SegoeUILight') format('svg');
-          font-weight: normal;
-          font-style: normal;
-        }
+    @font-face {
+      font-family: 'Segoe UI Semibold';
+      src: url('/surface/Assets/css/fonts/all/semibold/seguisb.eot');
+      src: url('/surface/Assets/css/fonts/all/semibold/seguisb.eot?#iefix') format('embedded-opentype'),
+        url('/surface/Assets/css/fonts/all/semibold/seguisb.woff') format('woff'),
+        url('/surface/Assets/css/fonts/all/semibold/seguisb.svg#SegoeUISemibold') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-        body {
-          font-family: 'Segoe UI', sans-serif;
-          color: #a3a3a3;
-        }
-        
-        .split {
-          height: 100%;
-          width: 50%;
-          position: fixed;
-          top: 0;
-          overflow-x: hidden;
-          padding-top: 20px;
-        }
-        
-        .left {
-          left: 0;
-          background-color: #2b2b2b;
-        }
-        
-        .right {
-          right: 0;
-          background-color: white;
-        }
-        
-        .centered {
-          position: absolute;
-          left: 32%;
-          top: 5%;
-        }
+    @font-face {
+      font-family: 'Segoe UI Bold';
+      src: url('/surface/Assets/css/fonts/all/bold/segoeuib.eot');
+      src: url('/surface/Assets/css/fonts/all/bold/segoeuib.eot?#iefix') format('eot'),
+        /* Wrong format will tell IE9+ to ignore and use WOFF instead. MSHAR-2822 */
+        url('/surface/Assets/css/fonts/all/bold/segoeuib.woff') format('woff'),
+        url('/surface/Assets/css/fonts/all/bold/segoeuib.svg#SegoeUIBold') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-        .leftcentered {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-        }
+    @font-face {
+      font-family: 'Segoe UI Light';
+      src: url('/surface/Assets/css/fonts/all/light/segoeuil.eot');
+      src: url('/surface/Assets/css/fonts/all/light/segoeuil.eot?#iefix') format('embedded-opentype'),
+        url('/surface/Assets/css/fonts/all/light/segoeuil.woff') format('woff'),
+        url('/surface/Assets/css/fonts/all/light/segoeuil.svg#SegoeUILight') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-        .topimage {
-          width: 22px;
-          border-radius: 20%;
-          margin-top: 20px;
-        }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #a3a3a3;
+    }
 
-        .bottomimage{
-          border-radius: 2%;
-          width: 310px;
-          margin-top: 20px;
-        }
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
 
-        .topname{
-          margin-top: 30px;
-          font-size: 15px;
-          font-weight: bold;
-        }
+    .left {
+      left: 0;
+      background-color: #2b2b2b;
+    }
 
-        .money{
-          color: white;
-          font-weight: 500;
-          font-size: 30px;
-          margin-top: -15px;
-          font-size: 40px;
-        }
+    .right {
+      right: 0;
+      background-color: white;
+    }
 
-        .descriptiontop{
-          margin-top: -40px;
-          font-weight: 650;
-          max-width: 30em;
-          font-size: 13px;
-        }
+    .centered {
+      position: absolute;
+      left: 32%;
+      top: 5%;
+    }
 
-        .pwp{
-          position: absolute;
-          left: 10%;
-          top: 5%;
-        }
+    .leftcentered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
 
-        .paparaileodeyin{
-          font-weight: 500;
-          color: #303030;
-          font-size: 20px;
-        }
+    .topimage {
+      width: 22px;
+      border-radius: 20%;
+      margin-top: 20px;
+    }
 
-        .ims{
-          font-size: 10px;
-          color: gray;
-          margin-top: -15px;
-        }
+    .bottomimage {
+      border-radius: 2%;
+      width: 310px;
+      margin-top: 20px;
+    }
 
-        button {
-          border: none;
-          outline: none;
-          background-color: purple;
-          padding: 1rem 2.5rem;
-          position: relative;
-          border-radius: 8px;
-          letter-spacing: 0.7px;
-          background-color: #7289da;
-          color: #fff;
-          font-size: 21px;
-          font-family: "Lato", sans-serif;
-          cursor: pointer;
-          box-shadow: rgba(0, 4, 27, 0.445) 0px 0px 8px 0px;
-        }
+    .topname {
+      margin-top: 30px;
+      font-size: 15px;
+      font-weight: bold;
+    }
 
-        a{
-          text-decoration: none;
-        }
-        
-        .buttons{
-          margin-top: 25px;
-        }
+    .money {
+      color: white;
+      font-weight: 500;
+      font-size: 30px;
+      margin-top: -15px;
+      font-size: 40px;
+    }
 
-        .or{
-          color: #303030;
-          font-size: 20px;
-          font-weight: 500;
-          font-family: 'Segoe UI', sans-serif;
-        }
+    .descriptiontop {
+      margin-top: -40px;
+      font-weight: 650;
+      max-width: 30em;
+      font-size: 13px;
+    }
 
-        .moneyy {
-          transition: transform .2s; /* Animation */
-          margin: 0 auto;
-        }
+    .pwp {
+      position: absolute;
+      left: 10%;
+      top: 5%;
+    }
 
-        .moneyy:hover{
-          transform: scale(1.1);
-        }
+    .paparaileodeyin {
+      font-weight: 500;
+      color: #303030;
+      font-size: 20px;
+    }
 
-        .ozelmiktar{
-          font-size: 12px;
-          margin-top: -18px;
-          color: #808080;
-          font-weight: 600;
+    .ims {
+      font-size: 10px;
+      color: gray;
+      margin-top: -15px;
+    }
 
-        }
-</style>
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+    button {
+      border: none;
+      outline: none;
+      background-color: purple;
+      padding: 1rem 2.5rem;
+      position: relative;
+      border-radius: 8px;
+      letter-spacing: 0.7px;
+      background-color: #7289da;
+      color: #fff;
+      font-size: 21px;
+      font-family: "Lato", sans-serif;
+      cursor: pointer;
+      box-shadow: rgba(0, 4, 27, 0.445) 0px 0px 8px 0px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .buttons {
+      margin-top: 25px;
+    }
+
+    .or {
+      color: #303030;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .moneyy {
+      transition: transform .2s;
+      /* Animation */
+      margin: 0 auto;
+    }
+
+    .moneyy:hover {
+      transform: scale(1.1);
+    }
+
+    .ozelmiktar {
+      font-size: 12px;
+      margin-top: -18px;
+      color: #808080;
+      font-weight: 600;
+    }
+
+    .verified{
+      width: 15px;
+      margin-bottom: -3px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
-    <div class="split left">
-        <div class="centered">
-          <img class="topimage" src="https://i.imgur.com/<%= pfp %>" alt="Profile Photo">
-          <h2 class="topname"><%= isim %></h2>
-          <p class="money">$10,00</p>
-          <p class="descriptiontop"><%= desc %></p>
-          <img class="bottomimage" src="https://i.imgur.com/<%= img %>" alt="">
-        </div>
+  <div class="split left">
+    <div class="centered">
+      <img class="topimage" src="https://i.imgur.com/<%= pfp %>" alt="Profile Photo">
+      <h2 class="topname">
+        <%= isim %>
+        <% if (locals.pre == true){ %>
+          <img class="verified" src="https://i.imgur.com/03AbVgl.png" alt="">
+        <% } else { %>
+        <% } %>
+      </h2>
+      <p class="money">₺10,00</p>
+      <p class="descriptiontop">
+        <%= desc %>
+      </p>
+      <img class="bottomimage" src="https://i.imgur.com/<%= img %>" alt="">
+    </div>
+  </div>
+  
+  <div class="split right">
+    <div class="pwp">
+      <h2 class="paparaileodeyin">Papara ile ödeyin</h2>
+      <h3 class="ims">İstediğiniz miktarı seçin veya özel bir miktar</br>belirleyin.</h3>
+      <div class="buttons">
+        <% if(locals.paparadesc != false){ %>
+          <a href="https://www.papara.com/personal/qr?amount=15&description=<%= paparadesc %>&accountNumber=<%= numara %>&currency=0">
+            <button class="moneyy">₺15</button>
+          </a>
+          <a href="https://www.papara.com/personal/qr?amount=50&description=<%= paparadesc %>&accountNumber=<%= numara %>&currency=0">
+            <button class="moneyy">₺50</button>
+          </a>
+          <a href="https://www.papara.com/personal/qr?amount=100&description=<%= paparadesc %>&accountNumber=<%= numara %>&currency=0">
+            <button class="moneyy">₺100</button>
+          </a>
+        <% } else { %>
+          <a href="https://www.papara.com/personal/qr?amount=15&description=<%= isim %>&accountNumber=<%= numara %>&currency=0">
+            <button class="moneyy">₺15</button>
+          </a>
+          <a href="https://www.papara.com/personal/qr?amount=50&description=<%= isim %>&accountNumber=<%= numara %>&currency=0">
+            <button class="moneyy">₺50</button>
+          </a>
+          <a href="https://www.papara.com/personal/qr?amount=100&description=<%= isim %>&accountNumber=<%= numara %>&currency=0">
+            <button class="moneyy">₺100</button>
+          </a>
+        <% } %>
+
       </div>
-      
-      <div class="split right">
-        <div class="pwp">
-        <h2 class="paparaileodeyin">Papara ile ödeyin</h2>
-        <h3 class="ims">İstediğiniz miktarı seçin veya özel bir miktar</br>belirleyin.</h3>
-          <div class="buttons">
-            <a href="https://repeatpay.ga/res/<%= numara %>/15/<%= isim %>">
-              <button class="moneyy">$15</button>
-            </a>
-            <a href="https://repeatpay.ga/res/<%= numara %>/50/<%= isim %>">
-              <button class="moneyy">$50</button>
-            </a>
-            <a href="https://repeatpay.ga/res/<%= numara %>/100/<%= isim %>">
-              <button class="moneyy">$100</button>
-            </a>
-          </div>
-          <p class="or">Veya,</p>
-          <p class="ozelmiktar">özel bir miktar belirleyin. (yakında!)</p>
-          <div class="orlist">
-          </div>
+      <p class="or">Veya,</p>
+      <p class="ozelmiktar">özel bir miktar belirleyin. (yakında!)</p>
+      <div class="orlist">
       </div>
-      <hr>
+    </div>
+    <hr>
 
 </body>
+
 </html>
